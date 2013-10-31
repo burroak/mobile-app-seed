@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" ng-app="myApp" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>My AngularJS App</title>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="css/appframe.css"/>
+
+    <script src="lib/jquery-1.10.2.js"></script>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+</head>
+<body ng-sidebar>
+<div id="sidebar" class="scrollable">
+    <ul class="menu">
+        <li><a href="#/view1">view1</a></li>
+        <li><a href="#/view2">view2</a></li>
+    </ul>
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet orci sed risus porta rutrum. Nullam
+    elementum, mauris convallis eleifend accumsan, sapien justo auctor justo, at interdum nibh nunc ac magna. Praesent
+    vel quam facilisis massa consectetur tempor. Proin facilisis, urna egestas tincidunt molestie, dolor elit dictum
+    arcu, eget rhoncus nisl lorem quis leo. Suspendisse at dapibus tortor. Curabitur dictum, felis ac malesuada tempor,
+    felis tortor laoreet turpis, non dignissim turpis tellus sit amet eros. Etiam lobortis id dui non tempor.
+
+    Mauris ac est commodo, ornare massa in, interdum sapien. Donec facilisis odio ac quam ullamcorper, laoreet auctor
+    metus vestibulum. Nullam lacus magna, pulvinar in eros non, sagittis pharetra enim. Fusce ut gravida nisl. Donec
+    nulla orci, pretium nec erat in, ultrices rhoncus arcu. Morbi fermentum porttitor nunc, eget egestas ligula. Nulla
+    facilisi. Morbi ac ultricies ligula. Sed eu congue quam. Nullam enim magna, iaculis at dapibus eget, convallis vitae
+    risus. Integer sollicitudin, nulla a tempus bibendum, elit lectus fermentum risus, vitae elementum ligula libero ac
+    urna. Maecenas fermentum ipsum id ornare pellentesque.
+
+    Vestibulum ligula dolor, tristique non nisi ac, fermentum rhoncus ipsum. Nam bibendum erat non metus commodo, at
+    tristique massa ornare. Quisque congue lorem sed nisl posuere egestas. Sed eu justo eget lacus pulvinar egestas.
+    Proin eu tellus in elit accumsan interdum. Quisque congue eget lacus id ultrices. Vestibulum ante ipsum primis in
+    faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas ullamcorper arcu turpis, non consectetur sapien
+    ultricies ac. Nulla sollicitudin convallis massa, eget aliquet sem consequat eu.
+
+    Vivamus aliquam lorem eget turpis congue lacinia. Donec feugiat ante sed lectus imperdiet mollis. Nunc sed placerat
+    massa. Sed semper purus eget mauris iaculis, in egestas augue rutrum. Nullam nulla sem, ultrices sit amet lorem
+    volutpat, euismod varius ipsum. Quisque turpis sem, vehicula sed aliquam sed, malesuada non justo. Aliquam ut
+    fermentum metus. Donec ac lobortis urna. Mauris viverra tincidunt elementum.
+
+    Mauris in nulla tempor, porttitor arcu et, faucibus mi. Nunc congue urna eget orci eleifend ultrices. Phasellus
+    ultricies nisi et metus molestie, a porttitor turpis blandit. Vivamus faucibus, lacus vitae volutpat porttitor,
+    ligula sem pellentesque turpis, sit amet imperdiet metus dui sit amet ligula. Sed tellus massa, convallis a
+    scelerisque ac, dignissim in nulla. Quisque iaculis eleifend egestas. Aenean volutpat lacus quis lectus suscipit
+    rutrum. In hac habitasse platea dictumst. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+    cubilia Curae; Nulla euismod mi vitae tortor euismod, sed interdum velit egestas. Duis rhoncus in nunc sit amet
+    faucibus. Nam ac rhoncus ante.
+</div>
+<div id="left-pane">
+    <div id="nav" class="accent">
+        <div class="nav-left">
+            <div id="nav-title-blk" class="nav-item">
+                <span id="navbar-btn" class="glyphicon glyphicon-align-justify"></span>
+                <span class="nav-title">My AngularJS App</span>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="scrollable">
+
+        <div ng-view></div>
+
+        <div>Angular seed app: v<span app-version></span></div>
+
+        <!-- In production use:
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        -->
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular/angular-route.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/filters.js"></script>
+        <script src="js/directives.js"></script>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet orci sed risus porta rutrum.
+            Nullam elementum, mauris convallis eleifend accumsan, sapien justo auctor justo, at interdum nibh nunc ac
+            magna. Praesent vel quam facilisis massa consectetur tempor. Proin facilisis, urna egestas tincidunt
+            molestie, dolor elit dictum arcu, eget rhoncus nisl lorem quis leo. Suspendisse at dapibus tortor. Curabitur
+            dictum, felis ac malesuada tempor, felis tortor laoreet turpis, non dignissim turpis tellus sit amet eros.
+            Etiam lobortis id dui non tempor.</p>
+
+        <p>Mauris ac est commodo, ornare massa in, interdum sapien. Donec facilisis odio ac quam ullamcorper, laoreet
+            auctor metus vestibulum. Nullam lacus magna, pulvinar in eros non, sagittis pharetra enim. Fusce ut gravida
+            nisl. Donec nulla orci, pretium nec erat in, ultrices rhoncus arcu. Morbi fermentum porttitor nunc, eget
+            egestas ligula. Nulla facilisi. Morbi ac ultricies ligula. Sed eu congue quam. Nullam enim magna, iaculis at
+            dapibus eget, convallis vitae risus. Integer sollicitudin, nulla a tempus bibendum, elit lectus fermentum
+            risus, vitae elementum ligula libero ac urna. Maecenas fermentum ipsum id ornare pellentesque.</p>
+
+        <p>Vestibulum ligula dolor, tristique non nisi ac, fermentum rhoncus ipsum. Nam bibendum erat non metus commodo,
+            at tristique massa ornare. Quisque congue lorem sed nisl posuere egestas. Sed eu justo eget lacus pulvinar
+            egestas. Proin eu tellus in elit accumsan interdum. Quisque congue eget lacus id ultrices. Vestibulum ante
+            ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas ullamcorper arcu turpis,
+            non consectetur sapien ultricies ac. Nulla sollicitudin convallis massa, eget aliquet sem consequat eu.</p>
+
+        <p>Vivamus aliquam lorem eget turpis congue lacinia. Donec feugiat ante sed lectus imperdiet mollis. Nunc sed
+            placerat massa. Sed semper purus eget mauris iaculis, in egestas augue rutrum. Nullam nulla sem, ultrices
+            sit amet lorem volutpat, euismod varius ipsum. Quisque turpis sem, vehicula sed aliquam sed, malesuada non
+            justo. Aliquam ut fermentum metus. Donec ac lobortis urna. Mauris viverra tincidunt elementum.</p>
+
+        <p>Mauris in nulla tempor, porttitor arcu et, faucibus mi. Nunc congue urna eget orci eleifend ultrices.
+            Phasellus ultricies nisi et metus molestie, a porttitor turpis blandit. Vivamus faucibus, lacus vitae
+            volutpat porttitor, ligula sem pellentesque turpis, sit amet imperdiet metus dui sit amet ligula. Sed tellus
+            massa, convallis a scelerisque ac, dignissim in nulla. Quisque iaculis eleifend egestas. Aenean volutpat
+            lacus quis lectus suscipit rutrum. In hac habitasse platea dictumst. Vestibulum ante ipsum primis in
+            faucibus orci luctus et ultrices posuere cubilia Curae; Nulla euismod mi vitae tortor euismod, sed interdum
+            velit egestas. Duis rhoncus in nunc sit amet faucibus. Nam ac rhoncus ante.</p>
+    </div>
+</div>
+<script>
+    var isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
+    var isiPad = navigator.userAgent.toLowerCase().indexOf("ipad");
+    var isiPod = navigator.userAgent.toLowerCase().indexOf("ipod");
+    var isAndroid = navigator.userAgent.toLowerCase().indexOf("android");
+    var isChrome = navigator.userAgent.toLowerCase().indexOf("chrome");
+    var isWP8 = navigator.userAgent.match(/IEMobile\/10\.0/);
+    var isiOS = isiPad >= 0 || isiPhone >= 0 || isiPod >= 0;
+
+    // Set up hover effects on nav bar items
+
+    $('.nav-item').map(function () {
+        if (isiOS) {
+            $(this).on('touchstart', function () {
+                $(this).addClass('nav-item-hover');
+            });
+
+            $(this).on('touchend', function () {
+                $(this).removeClass('nav-item-hover');
+            });
+        } else {
+            $(this).hover(function () {
+                $(this).addClass('nav-item-hover');
+            }, function () {
+                $(this).removeClass('nav-item-hover');
+            });
+        }
+    });
+
+    // Handle prevention of body scrolling when popup is visible (iOS)
+
+    //uses document because document will be topmost level in bubbling
+    $(document).on('touchmove', function (e) {
+        //e.preventDefault();
+    });
+
+
+    // Fix WP8 viewport
+    if (isWP8) {
+        var msViewportStyle = document.createElement("style");
+        msViewportStyle.appendChild(
+                document.createTextNode("@-ms-viewport{width:auto!important}")
+        );
+        document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+    }
+</script>
+</body>
+</html>
