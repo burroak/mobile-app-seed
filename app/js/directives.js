@@ -11,12 +11,11 @@ angular.module('myApp.directives', []).
         };
     }]).
 
-    directive('burroakSidebar', function ($window) {
+    directive('burroakSidebar', function ($window, $location) {
         /**
          * A directive to control the open/close state of the sidebar.
          */
         return function (scope, element) {
-
             /**
              * The default sidebar width.
              * @type {number}
@@ -71,7 +70,6 @@ angular.module('myApp.directives', []).
              * Toggle the sidebar open/closed.
              */
             function toggle() {
-                var sideBar = element.find('#sidebar');
                 var leftPane = element.find('#left-pane');
 
                 if (leftPane.css('left') == '0px') {
@@ -115,12 +113,28 @@ angular.module('myApp.directives', []).
             var toggleButton = element.find('#nav-title-blk');
             toggleButton.on('click', toggle);
 
+            // Attach a watch to the current location, closing the sidebar if it
+            // changes and the sidebar is collapsable.
+            scope.location = $location;
+            scope.$watch('location.path()', function(newPath) {
+                var sidebarButton = element.find('#nav-title-blk');
+
+                if (sidebarButton) {
+                    if (sidebarButton.css('display') != 'none') {
+                        close();
+                    }
+                }
+            });
+
             // Set the initial open/close state.
             setState();
         }
     }).
 
-    directive('burroakNavList', ['$location', function(location) {
+    directive('burroakNavList', function() {
+        /**
+         * A directive to highlight sidebar link buttons that reference current path.
+         */
         return {
             restrict: 'A',
             link: function(scope, element) {
@@ -134,7 +148,6 @@ angular.module('myApp.directives', []).
                     tabMap[$li.find('a').attr('href').substring(1)] = $li;
                 });
 
-                scope.location = location;
                 scope.$watch('location.path()', function(newPath) {
                     $tabs.removeClass("active");
                     tabMap[newPath].addClass("active");
@@ -143,4 +156,4 @@ angular.module('myApp.directives', []).
 
         };
 
-    }]);
+    });
