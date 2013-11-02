@@ -6,7 +6,7 @@
 angular.module('myApp.directives', []).
 
     directive('appVersion', ['version', function (version) {
-        return function (scope, elm, attrs) {
+        return function (scope, elm) {
             elm.text(version);
         };
     }]).
@@ -116,7 +116,7 @@ angular.module('myApp.directives', []).
             // Attach a watch to the current location, closing the sidebar if it
             // changes and the sidebar is collapsable.
             scope.location = $location;
-            scope.$watch('location.path()', function(newPath) {
+            scope.$watch('location.path()', function() {
                 var sidebarButton = element.find('#nav-title-blk');
 
                 if (sidebarButton) {
