@@ -1,3 +1,22 @@
+#mobile-app-seed
+
+This project aims to be a starting place for building JavaScript based web applications that look and behave like native applications across mobile and desktop platforms.
+
+mobile-app-seed uses the following technologies:
+
+- [AngularJS](http://angularjs.org/)
+- [angular-seed](https://github.com/angular/angular-seed)
+- [Bootstrap](http://getbootstrap.com/)
+
+mobile-app-seed is effectively a superset of [angular-seed](https://github.com/angular/angular-seed) (provided under the MIT license) and, as such, [the instructions for developing using angular-seed](https://github.com/angular/angular-seed/blob/master/README.md) can be used with the exceptions noted below.
+
+##Features
+
+- Top navigation bar with auto and manual collapsing side navigation pane
+- Support for Apple iPhone, iPad and iPod icons and startup images, as well as Google Chrome for Android application icons
+
+
+
 # angular-seed — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
