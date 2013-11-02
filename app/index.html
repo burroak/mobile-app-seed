@@ -22,54 +22,33 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
 </head>
-<body ng-sidebar>
-<div id="sidebar" class="scrollable">
-    <ul class="menu">
-        <li><a href="#/view1">view1</a></li>
-        <li><a href="#/view2">view2</a></li>
-    </ul>
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet orci sed risus porta rutrum. Nullam
-    elementum, mauris convallis eleifend accumsan, sapien justo auctor justo, at interdum nibh nunc ac magna. Praesent
-    vel quam facilisis massa consectetur tempor. Proin facilisis, urna egestas tincidunt molestie, dolor elit dictum
-    arcu, eget rhoncus nisl lorem quis leo. Suspendisse at dapibus tortor. Curabitur dictum, felis ac malesuada tempor,
-    felis tortor laoreet turpis, non dignissim turpis tellus sit amet eros. Etiam lobortis id dui non tempor.
-
-    Mauris ac est commodo, ornare massa in, interdum sapien. Donec facilisis odio ac quam ullamcorper, laoreet auctor
-    metus vestibulum. Nullam lacus magna, pulvinar in eros non, sagittis pharetra enim. Fusce ut gravida nisl. Donec
-    nulla orci, pretium nec erat in, ultrices rhoncus arcu. Morbi fermentum porttitor nunc, eget egestas ligula. Nulla
-    facilisi. Morbi ac ultricies ligula. Sed eu congue quam. Nullam enim magna, iaculis at dapibus eget, convallis vitae
-    risus. Integer sollicitudin, nulla a tempus bibendum, elit lectus fermentum risus, vitae elementum ligula libero ac
-    urna. Maecenas fermentum ipsum id ornare pellentesque.
-
-    Vestibulum ligula dolor, tristique non nisi ac, fermentum rhoncus ipsum. Nam bibendum erat non metus commodo, at
-    tristique massa ornare. Quisque congue lorem sed nisl posuere egestas. Sed eu justo eget lacus pulvinar egestas.
-    Proin eu tellus in elit accumsan interdum. Quisque congue eget lacus id ultrices. Vestibulum ante ipsum primis in
-    faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas ullamcorper arcu turpis, non consectetur sapien
-    ultricies ac. Nulla sollicitudin convallis massa, eget aliquet sem consequat eu.
-
-    Vivamus aliquam lorem eget turpis congue lacinia. Donec feugiat ante sed lectus imperdiet mollis. Nunc sed placerat
-    massa. Sed semper purus eget mauris iaculis, in egestas augue rutrum. Nullam nulla sem, ultrices sit amet lorem
-    volutpat, euismod varius ipsum. Quisque turpis sem, vehicula sed aliquam sed, malesuada non justo. Aliquam ut
-    fermentum metus. Donec ac lobortis urna. Mauris viverra tincidunt elementum.
-
-    Mauris in nulla tempor, porttitor arcu et, faucibus mi. Nunc congue urna eget orci eleifend ultrices. Phasellus
-    ultricies nisi et metus molestie, a porttitor turpis blandit. Vivamus faucibus, lacus vitae volutpat porttitor,
-    ligula sem pellentesque turpis, sit amet imperdiet metus dui sit amet ligula. Sed tellus massa, convallis a
-    scelerisque ac, dignissim in nulla. Quisque iaculis eleifend egestas. Aenean volutpat lacus quis lectus suscipit
-    rutrum. In hac habitasse platea dictumst. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-    cubilia Curae; Nulla euismod mi vitae tortor euismod, sed interdum velit egestas. Duis rhoncus in nunc sit amet
-    faucibus. Nam ac rhoncus ante.
-</div>
-<div id="left-pane">
-    <div id="nav" class="accent">
-        <div class="nav-left">
-            <div id="nav-title-blk" class="nav-item">
-                <span id="navbar-btn" class="glyphicon glyphicon-align-justify"></span>
-                <span class="nav-title">My AngularJS App</span>
-            </div>
+<body burroak-sidebar>
+<div id="nav" class="accent">
+    <div class="nav-left" class="nav-item">
+        <div id="nav-title-blk" class="nav-item">
+            <img src="img/appbar.align.justify-dark.png">
         </div>
     </div>
+    <div class="nav-center">
+        <span class="nav-title">My AngularJS App</span>
+    </div>
+    <div class="nav-right">
+
+    </div>
+</div>
+
+<div id="sidebar" class="scrollable">
+    <div class="section-header">Section Header</div>
+    <ul class="nav nav-pills nav-stacked" burroak-nav-list >
+        <li><a href="#/view1">view1</a></li>
+        <li><a href="#/view2"><span class="badge pull-right">42</span>view2</a></li>
+    </ul>
+    <div class="section-footer">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet orci sed risus porta rutrum. Nullam
+        elementum, mauris convallis eleifend accumsan, sapien justo auctor justo, at interdum nibh nunc ac magna.
+    </div>
+</div>
+<div id="left-pane">
     <div id="content" class="scrollable">
 
         <div ng-view></div>

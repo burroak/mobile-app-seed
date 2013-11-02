@@ -11,23 +11,80 @@ angular.module('myApp.directives', []).
         };
     }]).
 
-    directive('ngSidebar', function ($timeout) {
+    directive('burroakSidebar', function ($window) {
+        /**
+         * A directive to control the open/close state of the sidebar.
+         */
         return function (scope, element) {
 
-            var sidebarWidth = 220;
+            /**
+             * The default sidebar width.
+             * @type {number}
+             */
+            var sidebarWidth = 260;
 
+            /**
+             * The ratio between the width of the sidebar and the width of the content
+             * pane that is used to determine whether the sidebar is opened or closed.
+             * @type {number}
+             */
+            var sidebarMinContent = 4;
+
+            /**
+             * Set the state of the sidebar (open or closed) based on the width of the window.
+             */
+            function setState() {
+                var windowWidth = angular.element($window).width();
+
+                if (windowWidth < (sidebarWidth * sidebarMinContent)) {
+                    close();
+                    showButton();
+                } else {
+                    open();
+                    hideButton();
+                }
+            }
+
+            /**
+             * Hide the navigation button.
+             */
+            function hideButton() {
+                var sidebarButton = element.find('#nav-title-blk');
+
+                if (sidebarButton) {
+                    sidebarButton.css('display', 'none');
+                }
+            }
+
+            /**
+             * Show the navigation button.
+             */
+            function showButton() {
+                var sidebarButton = element.find('#nav-title-blk');
+
+                if (sidebarButton) {
+                    sidebarButton.css('display', 'inline');
+                }
+            }
+
+            /**
+             * Toggle the sidebar open/closed.
+             */
             function toggle() {
                 var sideBar = element.find('#sidebar');
                 var leftPane = element.find('#left-pane');
 
                 if (leftPane.css('left') == '0px') {
-                    expand();
+                    open();
                 } else {
-                    collapse();
+                    close();
                 }
             }
 
-            function collapse() {
+            /**
+             * Close the sidebar.
+             */
+            function close() {
                 var sideBar = element.find('#sidebar');
                 var leftPane = element.find('#left-pane');
 
@@ -35,7 +92,10 @@ angular.module('myApp.directives', []).
                 sideBar.css('left', '-' + sidebarWidth.toString() + 'px');
             }
 
-            function expand() {
+            /**
+             * Open the sidebar.
+             */
+            function open() {
                 var sideBar = element.find('#sidebar');
                 var leftPane = element.find('#left-pane');
 
@@ -43,8 +103,44 @@ angular.module('myApp.directives', []).
                 sideBar.css('left', '0');
             }
 
-            var toggleButton = element.find('#nav-title-blk');
+            // Attach a handler to the window resize event to cause the sidebar to open/close
+            // based on the screen size.
+            angular.element($window).bind('resize', function () {
+                scope.$apply(function () {
+                    setState();
+                });
+            });
 
+            // Attach the click event handler to the sidebar toggle button.
+            var toggleButton = element.find('#nav-title-blk');
             toggleButton.on('click', toggle);
+
+            // Set the initial open/close state.
+            setState();
         }
-    });
+    }).
+
+    directive('burroakNavList', ['$location', function(location) {
+        return {
+            restrict: 'A',
+            link: function(scope, element) {
+                var $ul = $(element);
+                var $tabs = $ul.children();
+                var tabMap = {};
+
+                $tabs.each(function() {
+                    var $li = $(this);
+                    //Substring 1 to remove the # at the beginning (because location.path() below does not return the #)
+                    tabMap[$li.find('a').attr('href').substring(1)] = $li;
+                });
+
+                scope.location = location;
+                scope.$watch('location.path()', function(newPath) {
+                    $tabs.removeClass("active");
+                    tabMap[newPath].addClass("active");
+                });
+            }
+
+        };
+
+    }]);
