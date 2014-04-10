@@ -15,6 +15,9 @@ mobile-app-seed is effectively a superset of [angular-seed](https://github.com/a
 - Top navigation bar with auto and manual collapsing side navigation pane
 - Support for Apple iPhone, iPad and iPod icons and startup images, as well as Google Chrome for Android application icons
 
+##Demo
+
+You can [see it in action here](http://burroak.ca/appframetest)
 
 
 # angular-seed — the seed for AngularJS apps
